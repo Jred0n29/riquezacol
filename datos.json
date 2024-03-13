@@ -1,0 +1,74 @@
+{
+    "Risaralda": {
+        "guatica.xls": {
+            "proyectos_mas_costosos": [
+                {
+                    "Descripcion": "CONSTRUCCI\u00d3N DE V\u00cdAS EN LA ZONA URBANA Y RURAL DEL MUNICIPIO DE GU\u00c1TICA RISARALDA",
+                    "ValorTotal": 3000000000.0,
+                    "Duracion": 7.0,
+                    "Contacto": "Ingrid Julany Herre\u00f1o Pacheco - Secretaria de Planeaci\u00f3n - Calle 8 No. 6-20 - 3105754205 - planeacion@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "MANTENIMIENTO Y MEJORAMIENTO DE LOS ACUEDUCTOS RURALES Y URBANOS DEL MUNICIPIO DE GU\u00c1TICA RISARALDA",
+                    "ValorTotal": 600000000.0,
+                    "Duracion": 12.0,
+                    "Contacto": "Ingrid Julany Herre\u00f1o Pacheco - Secretaria de Planeaci\u00f3n - Calle 8 No. 6-20 - 3105754205 - planeacion@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "PRESTACI\u00d3N DE SERVICIOS PROFESIONALES PARA REVISAR, AJUSTAR Y ACTUALIZAR EL ESQUEMA DE ORDENAMIENTO TERRITORIAL DEL MUNICIPIO DE GU\u00c1TICA RISARALDA",
+                    "ValorTotal": 400000000.0,
+                    "Duracion": 7.0,
+                    "Contacto": "Ingrid Julany Herre\u00f1o Pacheco - Secretaria de Planeaci\u00f3n - Calle 8 No. 6-20 - 3105754205 - planeacion@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "BRINDAR ATENCI\u00d3N INTEGRAL A LOS ADULTOS MAYORES BAJO LOS CRITERIOS DE LA LEY 1276 DE 2009, MODALIDAD CENTRO VIDA O D\u00cdA, RESIDENTES EN EL MUNICIPIO DE GU\u00c1TICA RISARALDA",
+                    "ValorTotal": 325000000.0,
+                    "Duracion": 6.0,
+                    "Contacto": "Olga Dicelly Calle Casta\u00f1o - Secretaria de Gobierno - Calle 8 No. 6-20 - 3128370062 -  gobierno@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "SUMINISTRO DE COMPONENTES DE LAS TECNOLOG\u00cdAS DE LA INFORMACI\u00d3N Y LA COMUNICACI\u00d3N PARA EL FORTALECIMIENTO INSTITUCIONAL DEL MUNICIPIO DE GU\u00c1TICA",     
+                    "ValorTotal": 300000000.0,
+                    "Duracion": 1.0,
+                    "Contacto": "Ingrid Julany Herre\u00f1o Pacheco - Secretaria de Planeaci\u00f3n - Calle 8 No. 6-20 - 3105754205 - planeacion@guatica-risaralda.gov.co"
+                }
+            ],
+            "prestaciones_mas_costosas": [
+                {
+                    "Descripcion": "PRESTACI\u00d3N DE SERVICIOS PROFESIONALES PARA REVISAR, AJUSTAR Y ACTUALIZAR EL ESQUEMA DE ORDENAMIENTO TERRITORIAL DEL MUNICIPIO DE GU\u00c1TICA RISARALDA",
+                    "ValorTotal": 400000000.0,
+                    "Duracion": 7.0,
+                    "Contacto": "Ingrid Julany Herre\u00f1o Pacheco - Secretaria de Planeaci\u00f3n - Calle 8 No. 6-20 - 3105754205 - planeacion@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "PRESTACI\u00d3N DE SERVICIOS PROFESIONALES EN MATERIA JUR\u00cdDICA PARA LA ASESOR\u00cdA DEL DESPACHO DEL ALCALDE Y LA REPRESENTACI\u00d3N JUDICIAL Y EXTRAJUDICIAL DE LA ENTIDAD TERRITORIAL",
+                    "ValorTotal": 58275000.0,
+                    "Duracion": 10.5,
+                    "Contacto": "Olga Dicelly Calle Casta\u00f1o - Secretaria de Gobierno - Calle 8 No. 6-20 - 3128370062 -  gobierno@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "PRESTACI\u00d3N DE SERVICIOS PROFESIONALES DE ASESOR\u00cdA Y ACOMPA\u00d1AMIENTO EN EL \u00c1REA CONTABLE EN EL MUNICIPIO DE GU\u00c1TICA RISARALDA",
+                    "ValorTotal": 44275000.0,
+                    "Duracion": 11.5,
+                    "Contacto": "Elkin Marino Santa Fl\u00f3rez - Secretario de Hacienda - Calle 8 No. 6-20 - hacienda@guatica-risaralda.gov.co - Tel\u00e9fono (6) 353 90 12"
+                },
+                {
+                    "Descripcion": "PRESTACI\u00d3N DE SERVICIOS PROFESIONALES Y ASESOR\u00cdA JUR\u00cdDICA EN LA SECRETAR\u00cdA DE CONTRATACI\u00d3N Y PLANEACI\u00d3N EN MATERIA PRECONTRACTUAL Y CONTRACTUAL EN PROCESOS DE CONTRATACI\u00d3N DIRECTA Y M\u00cdNIMA CUANT\u00cdA ",
+                    "ValorTotal": 43800000.0,
+                    "Duracion": 10.5,
+                    "Contacto": "Carlos Ariel Pescador Londo\u00f1o - Secretario de Servicios Admnistrativos y Contrataci\u00f3n - 3103635557 - contratacion@guatica-risaralda.gov.co"
+                },
+                {
+                    "Descripcion": "PRESTACI\u00d3N DE SERVICIOS PROFESIONALES PARA LA ESTRUCTURACI\u00d3N Y  FORMULACI\u00d3N DE PROYECTOS DE INVERSI\u00d3N",
+                    "ValorTotal": 43700000.0,
+                    "Duracion": 10.5,
+                    "Contacto": "Ingrid Julany Herre\u00f1o Pacheco - Secretaria de Planeaci\u00f3n - Calle 8 No. 6-20 - 3105754205 - planeacion@guatica-risaralda.gov.co"
+                }
+            ],
+            "maxima_cuantia": 3000000000.0,
+            "minima_cuantia": 1000000.0,
+            "promedio_meses": 7.219745222929936,
+            "presupuesto_total": 9735711999.626667
+        }
+    }
+}
