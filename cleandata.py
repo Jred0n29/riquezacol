@@ -15,7 +15,7 @@ def cargar_datos(ruta_archivo):
 
 def limpiar_datos(df):
     #Editar esta parte por lo del contacto
-    columnas_a_eliminar = [0,9,10]
+    columnas_a_eliminar = [0,5,6,8,9,10]
     df = df.drop(columns=df.columns[columnas_a_eliminar])
     df.columns = range(df.shape[1])
 
@@ -25,10 +25,8 @@ def limpiar_datos(df):
         1: 'Descripcion',
         2: 'FechaInicio',
         3: 'Duracion',
-        4: 'Modalidad',
-        5: 'Fuente',
-        6: 'ValorTotal',
-        7: 'Contacto'
+        4: 'ValorTotal',
+        5: 'Contacto'
     }
     df = df.rename(columns=nuevos_nombres)
     df = df.dropna(subset=['Codigo', 'Descripcion'])
@@ -189,6 +187,20 @@ for carpeta in carpetas:
         ruta_relativa = os.path.relpath(os.path.join(ruta_carpeta, archivo), directorio_actual)
         print(ruta_relativa)
         generar_json(ruta_relativa)
+import json
+import numpy as np
 
-# Imprimir el JSON generado
-print(all_json)
+# Convertir los valores de int64 a tipos nativos de Python antes de guardar
+all_json_converted = json.loads(json.dumps(all_json, default=lambda o: int(o) if isinstance(o, np.int64) else str(o)))
+
+# Nombre del archivo de salida
+nombre_archivo = 'datos.json'
+
+# Ruta completa del archivo de salida en el directorio actual
+ruta_salida = os.path.join(directorio_actual, nombre_archivo)
+
+# Guardar el diccionario 'all_json_converted' en un archivo JSON en el directorio actual
+with open(ruta_salida, 'w') as archivo_salida:
+    json.dump(all_json_converted, archivo_salida, indent=4)
+
+print(f"Archivo guardado exitosamente en: {ruta_salida}")
