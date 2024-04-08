@@ -2,7 +2,8 @@ import os
 import re
 import datetime
 import pandas as pd
-
+import json
+import numpy as np
 
 all_json = {}
 
@@ -14,7 +15,6 @@ def cargar_datos(ruta_archivo):
     return df
 
 def limpiar_datos(df):
-    #Editar esta parte por lo del contacto
     columnas_a_eliminar = [0,5,6,8,9,10]
     df = df.drop(columns=df.columns[columnas_a_eliminar])
     df.columns = range(df.shape[1])
@@ -41,38 +41,15 @@ def obtener_presupuesto_total(df):
     presupuesto_total = pd.to_numeric(df['ValorTotal'], errors='coerce').dropna().sum()
     return presupuesto_total
 
-def obtener_maxima_cuantia(df):
-    # Convertir 'ValorTotal' a numérico, ignorando los errores
+def obtener_extremo_cuantia(df, es_maximo=True):
     df['ValorTotal'] = pd.to_numeric(df['ValorTotal'], errors='coerce')
-    
-    # Eliminar filas con valores nulos en 'ValorTotal'
     df = df.dropna(subset=['ValorTotal'])
-
-    # Si hay filas después de eliminar valores nulos
     if not df.empty:
-        # Calcular el índice del valor máximo en 'ValorTotal'
-        indice_max_valor = df['ValorTotal'].idxmax()
-        # Obtener la fila correspondiente al valor máximo
-        fila_max_valor = df.loc[indice_max_valor]
-        return fila_max_valor
+        indice_extremo = df['ValorTotal'].idxmax() if es_maximo else df['ValorTotal'].idxmin()
+        fila_extremo = df.loc[indice_extremo]
+        return fila_extremo
     else:
-        # Si el DataFrame está vacío después de eliminar valores nulos, retornar None en lugar de 0
         return None
-
-
-def obtener_minima_cuantia(df):
-    # Convertir 'ValorTotal' a numérico, ignorando los errores
-    df['ValorTotal'] = pd.to_numeric(df['ValorTotal'], errors='coerce')
-    df = df.dropna(subset=['ValorTotal'])
-
-    if not df.empty:
-        fila_min_valor = df.loc[df['ValorTotal'].idxmin()]
-      
-        return fila_min_valor
-    else:
-        # Si el DataFrame está vacío después de eliminar valores nulos, retornar None
-        return pd.DataFrame(columns=df.columns)
-
 
 def obtener_meses_promedio(df):
     df = df[~df['Duracion'].apply(lambda x: isinstance(x, datetime.datetime))]
@@ -137,9 +114,6 @@ def obtener_prestaciones_mas_costosas(df, cantidad=5):
     
     return top_prestaciones
 
-
-
-
 # Función para generar el JSON
 def generar_json(ruta_archivo):
     # Obtener el nombre del archivo y de la carpeta
@@ -152,8 +126,8 @@ def generar_json(ruta_archivo):
 
     # Obtener la información requerida
     presupuesto_total = obtener_presupuesto_total(df)
-    maxima_cuantia = obtener_maxima_cuantia(df)
-    minima_cuantia = obtener_minima_cuantia(df)
+    maxima_cuantia = obtener_extremo_cuantia(df, es_maximo=True)
+    minima_cuantia = obtener_extremo_cuantia(df, es_maximo=False)
     promedio_meses = obtener_meses_promedio(df)
     proyectos_mas_costosos = obtener_proyectos_mas_costosos(df)
     prestaciones_mas_costosas = obtener_prestaciones_mas_costosas(df)
@@ -165,7 +139,7 @@ def generar_json(ruta_archivo):
                 "proyectos_mas_costosos": proyectos_mas_costosos[['Descripcion', 'ValorTotal', 'Duracion', 'Contacto']].to_dict(orient='records'),
                 "prestaciones_mas_costosas": prestaciones_mas_costosas[['Descripcion', 'ValorTotal', 'Duracion', 'Contacto']].to_dict(orient='records'),
                 "maxima_cuantia": maxima_cuantia['ValorTotal'] if maxima_cuantia is not None else None,
-                "minima_cuantia": minima_cuantia['ValorTotal'],
+                "minima_cuantia": minima_cuantia['ValorTotal'] if minima_cuantia is not None else None,
                 "promedio_meses": promedio_meses,
                 "presupuesto_total": presupuesto_total
             }
@@ -187,8 +161,6 @@ for carpeta in carpetas:
         ruta_relativa = os.path.relpath(os.path.join(ruta_carpeta, archivo), directorio_actual)
         print(ruta_relativa)
         generar_json(ruta_relativa)
-import json
-import numpy as np
 
 # Convertir los valores de int64 a tipos nativos de Python antes de guardar
 all_json_converted = json.loads(json.dumps(all_json, default=lambda o: int(o) if isinstance(o, np.int64) else str(o)))

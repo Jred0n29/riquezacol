@@ -1,4 +1,2 @@
--- Arreglar la columna Contacto
--- En caso de que no hayan 5 prestaciones costosas que escoja menos
 -- Quita el espacio de los nombres
 -- Optimizar el codigo en especial minima y maxima cuantia
